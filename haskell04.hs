@@ -23,4 +23,4 @@ genCircs :: Int -> (Int,Int) -> Int -> [(Int,Int,Int)]
 genCircs n (x, y) r = reverse [(x, y, n) | x <- [x + (r^2 * (n-1)), x + (2^2 * (n-2)) .. x]]
 
 genReds :: Int -> [(Int, Int, Int)]
-genReds n = map (\(x,y,z) -> if(x * (n `mod`7) > 255) then (x * (n `mod`7), 0, 0) else (x, 0, 0)) [(red, 0, 0) | red <- [50, 60 .. 50 + (10 * n)]]
+genReds n = map (\(x,y,z) -> if(x * (n `mod`7) > 255) then (x, 0, 0) else (x * (n `mod`7), 0, 0)) [(red, 0, 0) | red <- [50, 60 .. 50 + (10 * n)]]
